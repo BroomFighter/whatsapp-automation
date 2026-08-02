@@ -1,8 +1,18 @@
 import pywhatkit as kit
-import datetime
+import time
+import pyautogui
 
-now = datetime.datetime.now()
-target_number = "+940702233100"
+target_number = "+940742774336"
 
-print(f"Scheduling message for {now.hour}:{now.minute + 2}.....")
-kit.sendwhatmsg(target_number, "Day 1: Automated message", now.hour, now.minute +2)
+message = "Day 1: Automated message"
+print("Opening whatsapp web")
+
+kit.sendwhatmsg_instantly(target_number, message, wait_time=15)
+
+time.sleep(2)
+pyautogui.press('enter')
+
+print("message sent successfully")
+
+
+
